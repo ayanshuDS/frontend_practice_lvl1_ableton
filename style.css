@@ -283,7 +283,7 @@ iframe {
         & h2,
         & a {
             color: var(--clr-primary-800);
-            font-weight: var(--fw-normal);
+            font-weight: var(--fw-bold);
             font-size: var(--step-1);
             text-decoration: none;
         }
@@ -331,12 +331,6 @@ footer {
         color: var(--clr-primary-800);
         font-size: var(--step-0);
         text-decoration: none;
-    }
-
-    & p,
-    & a,
-    & a:visited {
-        opacity: 0.9;
     }
 }
 
@@ -391,15 +385,17 @@ footer .input__field {
     & input {
         flex-grow: 1;
         background-color: var(--clr-primary-300);
+        font-family: var(--ff-base);
         border: none;
-        padding-inline: 0.5rem;
+        padding-inline: 1rem;
         font-size: var(--step-0);
     }
 
     & button {
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 2rem;
         background-color: var(--clr-secondary);
         border: none;
+        font-family: var(--ff-base);
         color: var(--clr-neutral);
         font-size: var(--step-0);
         /* word-wrap: unset; */
@@ -410,6 +406,7 @@ footer .select__container select {
     border: none;
     padding: 0.25rem 0.25rem;
     background-color: var(--clr-primary-300);
+    font-family: futura-pt, sans-serif;
     font-weight: var(--fw-bold);
 }
 
