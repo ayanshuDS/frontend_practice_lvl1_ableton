@@ -41,11 +41,23 @@
     --ff-base: futura-pt, sans-serif;
 
     /* font-size */
+
     /* fs-300: 14.00px → 16.00px */
     --fs-300: clamp(0.88rem, calc(0.78rem + 0.28vw), 1rem);
-    --fs-400: 1rem;
-    --fs-500: 1.25rem;
-    --fs-600: 1.875rem;
+
+    /* fs-400: 16.00px → 20.00px */
+    --fs-400: clamp(1rem, calc(0.82rem + 0.56vw), 1.25rem);
+
+    --fs-450: 1.25rem;
+
+    /* fs-500: 20.00px → 30.00px */
+    --fs-500: clamp(1.25rem, calc(0.8rem + 1.39vw), 1.88rem);
+
+    /* fs-600: 43.20px → 70.31px */
+    --fs-600: clamp(2.7rem, calc(1.48rem + 3.77vw), 4.39rem);
+
+    /* fs-700: 74.65px → 137.33px */
+    --fs-700: clamp(4.67rem, calc(1.84rem + 8.71vw), 8.58rem);
 
     /* font-weight */
     --fw-normal: 400;
@@ -53,16 +65,6 @@
 
     /* line-height */
     --lh-base: 1.5;
-
-    /* type scale */
-    --step--2: clamp(0.56rem, calc(1.1rem + -0.67vw), 0.64rem);
-    --step--1: clamp(0.8rem, calc(0.62rem + 0.26vw), 0.83rem);
-    --step-0: clamp(1rem, calc(-0.37rem + 2vw), 1.25rem);
-    --step-1: clamp(1.25rem, calc(-2.19rem + 5vw), 1.88rem);
-    --step-2: clamp(1.56rem, calc(-5.31rem + 10vw), 2.81rem);
-    --step-3: clamp(1.95rem, calc(-10.51rem + 18.13vw), 4.22rem);
-    --step-4: clamp(2.44rem, calc(-18.94rem + 31.1vw), 6.33rem);
-    --step-5: clamp(3.05rem, calc(-32.37rem + 51.53vw), 9.49rem);
 
     /* padding-inline: 24px → 40px */
     --padding-inline: clamp(1.5rem, calc(0.78rem + 2.22vw), 2.5rem);
@@ -85,11 +87,9 @@ svg {
     /* outline: 2px solid hsl(330, 100%, 71%); */
 }
 
-/* font-family: futura-pt,Avenir,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif; */
-
 body {
     font-family: var(--ff-base);
-    font-size: var(--fs-500);
+    font-size: var(--fs-400);
     line-height: var(--lh-base);
 }
 
@@ -133,7 +133,7 @@ a:has(svg) {
         align-items: start;
         gap: 1rem;
         list-style: none;
-        font-size: var(--fs-500);
+        font-size: var(--fs-450);
     }
 
     & a,
@@ -207,7 +207,7 @@ a:has(svg) {
     position: absolute;
     top: 0;
     right: 0;
-    width: 10%;
+    width: 1.5rem;
     height: 100%;
     background-image: linear-gradient(
         to right,
@@ -274,7 +274,7 @@ hr {
         color: var(--clr-secondary);
     }
     & li:last-child a {
-        font-size: var(--fs-400);
+        font-size: var(--fs-300);
     }
 }
 
@@ -295,7 +295,7 @@ hr {
     border: none;
     background-color: transparent;
     color: var(--clr-primary-800);
-    font-size: var(--fs-500);
+    font-size: var(--fs-450);
     font-family: var(--ff-base);
     font-weight: var(--fw-bold);
 }
@@ -320,7 +320,7 @@ main {
         grid-row: 1;
         justify-self: center;
         align-self: center;
-        font-size: var(--step-5);
+        font-size: var(--fs-700);
         color: var(--clr-accent);
     }
     & img {
@@ -423,12 +423,15 @@ iframe {
     .text__block {
         grid-column: 3 / -3;
         grid-row: 3;
+        padding-block: 2rem;
+        display: grid;
+        gap: 1rem;
         align-self: center;
         & h2,
         & a {
             color: var(--clr-primary-800);
             font-weight: var(--fw-bold);
-            font-size: var(--step-1);
+            font-size: var(--fs-500);
             text-decoration: none;
         }
         & a,
@@ -441,11 +444,8 @@ iframe {
 .content {
     padding-block: var(--space-s);
     & h2 {
-        font-size: var(--step-1);
+        font-size: var(--fs-500);
         padding-bottom: var(--space-3xs);
-    }
-    & p {
-        font-size: var(--step-0);
     }
 }
 
@@ -464,16 +464,15 @@ footer {
     }
 
     & h2 {
-        font-size: var(--step-3);
+        font-size: var(--fs-600);
     }
 
     & h3,
     & p,
     & a,
     & a:visited {
-        /* font-weight: var(--fw-normal); */
         color: var(--clr-primary-800);
-        font-size: var(--step-0);
+        font-size: var(--fs-400);
         text-decoration: none;
     }
 }
@@ -504,7 +503,6 @@ footer .social__links {
 }
 footer .social__links li svg {
     width: 2.5rem;
-    /* aspect-ratio: 1 / 1; */
     height: 2.5rem;
 }
 
@@ -532,7 +530,7 @@ footer .input__field {
         font-family: var(--ff-base);
         border: none;
         padding-inline: 1rem;
-        font-size: var(--step-0);
+        font-size: var(--fs-400);
     }
 
     & button {
@@ -541,13 +539,13 @@ footer .input__field {
         border: none;
         font-family: var(--ff-base);
         color: var(--clr-neutral);
-        font-size: var(--step-0);
-        /* word-wrap: unset; */
+        font-size: var(--fs-400);
     }
 }
 
 footer .select__container select {
     border: none;
+    max-width: 60%;
     padding: 0.25rem 0.25rem;
     background-color: var(--clr-primary-300);
     font-family: futura-pt, sans-serif;
@@ -556,9 +554,6 @@ footer .select__container select {
 
 section:has(.footer__links) {
     display: flex;
-    /* flex-direction: row;
-    justify-content: space-between; */
-    /* align-items: center; */
     gap: 5rem;
 }
 
@@ -570,7 +565,7 @@ footer .footer__links {
 
 footer .footer__links a,
 footer .branding p {
-    font-size: var(--step--1);
+    font-size: var(--fs-300);
     font-weight: var(--fw-bold);
 }
 
