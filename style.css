@@ -220,7 +220,7 @@ a:has(svg) {
     transform: translateY(0%);
 }
 
-.hide header {
+header {
     --transform-height-1: 0px;
     --transform-height-2: 0px;
     position: fixed;
